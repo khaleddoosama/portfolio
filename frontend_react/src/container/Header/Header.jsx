@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { images } from '../../constants';
 import { motion } from 'framer-motion';
 import { FaFileDownload } from "react-icons/fa";
-import axios from 'axios';
 
 
 import './Header.scss';
 import { AppWrap } from '../../wrapper';
 import { client } from '../../client';
+import { v4 as uuidv4 } from 'uuid';
 
 const scaleVariants = {
   whileInView: {
@@ -20,33 +20,67 @@ const scaleVariants = {
   }
 }
 
-
 const Header = () => {
+
+  //log number of visitors
   useEffect(() => {
-    axios.get('https://api.api-ninjas.com/v1/counter?id=devkhaled', {
-      headers: { 'X-Api-Key': 'cHr0J/0OJk2nqWtG2AuhcA==16ndI5fZrxyqTKG2' },
-      contentType: 'application/json',
-    })
-      .then((response) => {
-        const count = response.data.value;
-        console.log('Old Number of visits: ' + count);
-        axios.get('https://api.api-ninjas.com/v1/counter?id=devkhaled&value=' + (count + 1), {
-          headers: { 'X-Api-Key': 'cHr0J/0OJk2nqWtG2AuhcA==16ndI5fZrxyqTKG2' },
-          contentType: 'application/json',
-        })
-          .then((response) => {
-            console.log('New Number of visits: ' + response.data.value);
-          })
-          .catch((error) => {
-            console.log('error2');
-            console.error('Error: ', error.response);
-          });
+    const query = `*[_type == "visitor"]`;
+    client.fetch(query)
+      .then((result) => {
+        console.log(result.length);
       })
       .catch((error) => {
-        console.log('error1');
-        console.error('Error: ', error.response);
+        console.log(error);
       });
-  }, []);
+  }, [])
+
+  function generateId() {
+    return uuidv4();
+  }
+
+  const newDocument = {
+    _type: 'visitor',
+    id: generateId(),
+    referringUrl: document.referrer,
+    
+
+  }
+
+  useEffect(() => {
+
+    const visitorId = localStorage.getItem('VisitorId');
+
+    if (visitorId) {
+      const query = `*[_type == "visitor" && id == "${visitorId}"][0]`;
+
+      client.fetch(query)
+        .then((result) => {
+          if (!result) {
+            client.create(newDocument)
+              .then((result) => {
+                localStorage.setItem('VisitorId', result.id);
+              })
+              .catch((error) => {
+                console.log(error);
+              }
+              );
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      client.create(newDocument)
+        .then((result) => {
+          localStorage.setItem('VisitorId', result.id);
+        })
+        .catch((error) => {
+          console.log(error);
+        }
+        );
+    }
+  }, [])
+
 
   const [resume, setResume] = useState([]);
 
