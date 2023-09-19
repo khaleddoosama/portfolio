@@ -1,7 +1,5 @@
 import React from 'react';
-import { BsTwitter, BsInstagram, BsLinkedin, BsGithub } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
-// code forces
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { SiCodeforces } from 'react-icons/si';
 
 const SocialMedia = () => {
