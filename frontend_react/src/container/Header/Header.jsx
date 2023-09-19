@@ -114,7 +114,7 @@ const Header = () => {
           </div>
           {resume && (<div className='app__flex tag-cmp'>
 
-            <a href={resume} download>
+            <a href={resume} download target="_blank" rel="noopener noreferrer">
               <p className='p-text'>Resume <FaFileDownload /> </p>
             </a>
 
