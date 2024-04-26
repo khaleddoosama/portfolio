@@ -1,25 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Khaled Osama",
+  "name": "Khaled Osama - Software Engineer and Web Developer Portfolio",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://khaled.software/logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "https://khaled.software/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://khaled.software/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://khaled.software/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "scope": "/",
+  "background_color": "#ffffff",
+  "description": "Explore the portfolio of Khaled Osama, a Web Developer and Software Engineer specializing in Laravel."
 }

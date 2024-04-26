@@ -2,9 +2,5 @@
 User-agent: *
 Disallow:
 
-# Allow all crawlers access to important files and directories
-Allow: /logo.png
-Allow: /manifest.json
-
 # Sitemap location
 Sitemap: https://khaled.software/sitemap.xml
