@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
-import { Textbox, Radiobox, Checkbox, Select, Textarea } from 'react-inputs-validation';
 
 
 const initialState = {

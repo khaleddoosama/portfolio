@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 function App() {
-  const { getTestimonialsData, setMenu, testimonials, getCertificatesData, certificates, menu } = useStateContext();
+  const { getTestimonialsData, setMenu, testimonials, getCertificatesData, certificates } = useStateContext();
   useEffect(() => {
     getTestimonialsData();
     getCertificatesData();

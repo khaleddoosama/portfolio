@@ -3,7 +3,6 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 
-import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Certificates.scss';
