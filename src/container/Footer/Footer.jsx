@@ -35,27 +35,33 @@ const Footer = () => {
     const one = document.getElementsByName('name');
     const two = document.getElementsByName('email');
     const three = document.getElementsByName('message');
-    let mailsRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let mailsRe = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
-
+    let obj = {
+      errorName: "Please enter your name",
+      errorEmail: "Please enter your email",
+      errorValidEmail: "Please enter a valid email",
+      errorMessage: "Please enter your Message",
+    };
     if (one[0].value === '') {
-      setErrors({ ...initialState, ['errorName']: 'Please enter your name' });
+      // setErrors({ ...initialState, ['errorName']: 'Please enter your name' });
+      setErrors({ ...initialState, errorName: obj.errorName });
       one[0].focus()
       return 0
     }
     else if (two[0].value === '' || !mailsRe.test(two[0].value))
     {
       if (two[0].value === '')
-        setErrors({ ...initialState, ['errorEmail']: "Please enter your email" });
+        setErrors({ ...initialState, errorEmail: obj.errorEmail });
       else
-        setErrors({ ...initialState, ['errorEmail']: "Please enter a valid email" });
+        setErrors({ ...initialState, errorEmail: obj.errorValidEmail });
       
       two[0].focus()
       return 0
     }
     else if (three[0].value === '')
     {
-      setErrors({ ...initialState, ['errorMessage']: "Please enter your Message" });
+      setErrors({ ...initialState, errorMessage: obj.errorMessage });
       three[0].focus();
       return 0
     }
