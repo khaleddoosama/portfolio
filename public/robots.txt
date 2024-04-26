@@ -8,4 +8,3 @@ Allow: /manifest.json
 
 # Sitemap location
 Sitemap: https://khaled.software/sitemap.xml
-
