@@ -38,48 +38,42 @@ const Header = () => {
     return uuidv4();
   }
 
-  const newDocument = {
-    _type: 'visitor',
-    id: generateId(),
-    referringUrl: document.referrer,
-    
-
-  }
-
+  // Effect for handling visitor ID in localStorage
   useEffect(() => {
-
     const visitorId = localStorage.getItem('VisitorId');
+    if (!visitorId) {
+      const newVisitor = {
+        _type: 'visitor',
+        id: generateId(),
+        referringUrl: document.referrer,
+      };
 
-    if (visitorId) {
+      client.create(newVisitor)
+        .then(result => {
+          localStorage.setItem('VisitorId', result.id);
+          console.log('New visitor added:', result.id);
+        })
+        .catch(error => console.error('Error creating new visitor:', error));
+    } else {
       const query = `*[_type == "visitor" && id == "${visitorId}"][0]`;
-
       client.fetch(query)
-        .then((result) => {
+        .then(result => {
           if (!result) {
-            client.create(newDocument)
-              .then((result) => {
+            const newVisitor = {
+              _type: 'visitor',
+              id: generateId(),
+              referringUrl: document.referrer,
+            };
+            client.create(newVisitor)
+              .then(result => {
                 localStorage.setItem('VisitorId', result.id);
               })
-              .catch((error) => {
-                console.log(error);
-              }
-              );
+              .catch(error => console.error('Error creating new visitor:', error));
           }
         })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      client.create(newDocument)
-        .then((result) => {
-          localStorage.setItem('VisitorId', result.id);
-        })
-        .catch((error) => {
-          console.log(error);
-        }
-        );
+        .catch(error => console.error('Error fetching visitor:', error));
     }
-  },)
+  }, []); // Added 'client' to dependencies
 
 
   const [resume, setResume] = useState([]);
