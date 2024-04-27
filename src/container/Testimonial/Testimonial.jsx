@@ -31,7 +31,7 @@ const Testimonial = () => {
       setBrands(data);
     });
  
-  },[]);
+  },[getTestimonialsData]);
 
   const test = testimonials[currentIndex];
 

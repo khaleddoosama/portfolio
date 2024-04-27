@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     getTestimonialsData();
     getCertificatesData();
-  },[])
+  },[getTestimonialsData, getCertificatesData])
 
   useEffect(() => {
     if (testimonials.length && certificates.length) {
