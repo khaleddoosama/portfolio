@@ -79,7 +79,7 @@ const Header = () => {
         }
         );
     }
-  },)
+  },[])
 
 
   const [resume, setResume] = useState([]);
