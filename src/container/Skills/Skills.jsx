@@ -83,7 +83,7 @@ const Skills = () => {
                     </motion.div>
 
 
-                    {tooltip && <ReactTooltip id={work.name}
+                    {tooltip && <ReactTooltip id={work.name} html={true}
                       effect="solid"
                       arrowColor="#fff"
                       className="skills-tooltip"
