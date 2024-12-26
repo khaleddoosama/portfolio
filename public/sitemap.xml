@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://khaled.software/</loc>
+        <loc>https://khaleddoosama.me/</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- favicon -->
     <url>
-        <loc>https://khaled.software/favicon.ico</loc>
+        <loc>https://khaleddoosama.me/favicon.ico</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://khaled.software/favicon64.ico</loc>
+        <loc>https://khaleddoosama.me/favicon64.ico</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://khaled.software/logo.png</loc>
+        <loc>https://khaleddoosama.me/logo.png</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- public\manifest.json -->
     <url>
-        <loc>https://khaled.software/manifest.json</loc>
+        <loc>https://khaleddoosama.me/manifest.json</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <!-- public\index.html -->
     <url>
-        <loc>https://khaled.software/index.html</loc>
+        <loc>https://khaleddoosama.me/index.html</loc>
         <lastmod>2023-04-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>

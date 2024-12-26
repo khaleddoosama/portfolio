@@ -3,22 +3,22 @@
   "name": "Khaled Osama - Software Engineer and Web Developer Portfolio",
   "icons": [
     {
-      "src": "https://khaled.software/favicon64.ico",
+      "src": "https://khaleddoosama.me/favicon64.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://khaled.software/logo.png",
+      "src": "https://khaleddoosama.me/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://khaled.software/logo.png",
+      "src": "https://khaleddoosama.me/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://khaled.software/",
+  "start_url": "https://khaleddoosama.me/",
   "display": "standalone",
   "theme_color": "#000000",
   "scope": "/",
