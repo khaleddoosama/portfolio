@@ -104,7 +104,7 @@ const Header = () => {
           </div>
           <div className='app__flex tag-cmp'>
             <p className='p-text'>Software Engineer</p>
-            <p className='p-text'>Web Developer</p>
+            <p className='p-text'>Backend Developer</p>
           </div>
           {resume && (<div className='app__flex tag-cmp'>
 
